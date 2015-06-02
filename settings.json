@@ -1,0 +1,7 @@
+{
+  "TestURL": "www.baidu.com",
+  "Paramas": "filepath",
+  "Header": {"User-Agent": "Mozilla/5.0"},
+  "SSL": false
+}
+
