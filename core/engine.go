@@ -43,17 +43,17 @@ func sendRequest(req *http.Request) (response string, err error) {
 	client := http.Client{}
 
 	resp, err := client.Do(req)
-    if err != nil {
-        response = ""
-    } else {
-        defer resp.Body.Close()
-        body, readErr := ioutil.ReadAll(resp.Body)
-        if readErr != nil {
-            err = readErr
-        } else {
-            response = string(body)
-        }
-    }
+	if err != nil {
+		response = ""
+	} else {
+		defer resp.Body.Close()
+		body, readErr := ioutil.ReadAll(resp.Body)
+		if readErr != nil {
+			err = readErr
+		} else {
+			response = string(body)
+		}
+	}
 
 	return response, err
 }

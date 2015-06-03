@@ -3,22 +3,22 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-    "os"
+	C "github.com/go_proj/proj/core"
+	"os"
 	"time"
-    C "github.com/go_proj/proj/core"
 )
 
 type Settings struct {
-    TestURL string
-    Params map[string]string
-    Header map[string]string
-    SSL bool
+	TestURL string
+	Params  map[string]string
+	Header  map[string]string
+	SSL     bool
 }
 
 var settings Settings
 
 func main() {
-    get_settings(&settings)
+	get_settings(&settings)
 
 	foo := func() (task C.Runner) {
 		task = &C.HttpTask{
@@ -55,4 +55,3 @@ func get_settings(settings *Settings) {
 		fmt.Println("Decode settings file error:", err)
 	}
 }
-

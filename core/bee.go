@@ -38,7 +38,7 @@ func (b Bee) Launcher() {
 
 	go b.Scheduler(b.Duration)
 
-    rwg.Add(1)
+	rwg.Add(1)
 	go collectResults(b.results, b.allDone, &rwg)
 
 	for i := 0; i < b.ConsumerCount; i++ {
